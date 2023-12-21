@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "DeneyimEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid text-center">
+    <!-- Ekranı tam kaplamak ve içeriği ortalamak için container-fluid ve text-center kullanımı -->
+    <br />
+    <br />
+    <h4 style="margin-top: 20px;">Yeni Deneyim Ekleme Sayfası</h4>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <br />
+    <form method="post" class="form-control">
+        <br />
+        <br />
+        <input type="text" name="Baslik" class=" form-control" placeholder="Başlığı yazınız..." />
+        <br />
+        <input type="text" name="AltBaslik" class=" form-control" placeholder="Alt Başlık yazınız..." />
+        <br />
+        <input type="text" name="Tarih" class=" form-control" placeholder="Çalışma Tarihi yazınız..." />
+        <br />
+        <textarea placeholder="Açıklamanızı yazınız..." name="Aciklama" class="form-control" rows="5"></textarea>
+        <br />
+        <button class="btn btn-info btn-lg btn-block">Kaydet</button>
+    </form>
+</div>

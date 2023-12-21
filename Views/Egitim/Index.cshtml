@@ -1,0 +1,69 @@
+﻿@using MvcCV.Models.Entity
+@model List<TblEgitimlerim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    /* Özel stil ayarları */
+    .full-width-container {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .centered-container {
+        max-width: 1600px; /* İstediğiniz genişliği ayarlayabilirsiniz */
+        margin: 0 auto;
+    }
+</style>
+
+<div class="full-width-container">
+    <div class="centered-container">
+        <br />
+        <br />
+        <h2>Eğitim Listesi</h2>
+        <br />
+        <br />
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>Başlık</th>
+                <th>Alt Başlık</th>
+                <th>GNO</th>
+                <th>Tarih</th>
+                <th>Sil</th>
+                <th>Düzenle</th>
+            </tr>
+            @foreach (var item in Model)
+            { 
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Baslik</td>
+                    <td>@item.AltBaslik</td>
+                    <td>@item.GNO</td>
+                    <td>@item.Tarih</td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" href="/Egitim/EgitimSil/@item.ID">
+                            <i class="fas fa-trash">
+                            </i>
+                            Sil
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-info btn-sm" href="/Egitim/EgitimDuzenle/@item.ID">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            Düzenle
+                        </a>
+                    </td>
+                </tr>
+            }
+        </table>
+        <br />
+        <br />
+        <a href="/Egitim/EgitimEkle/" class="btn btn-primary btn-block">Yeni Eğitim Ekle</a>
+    </div>
+</div>

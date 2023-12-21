@@ -1,0 +1,26 @@
+﻿@model MvcCV.Models.Entity.TblYeteneklerim
+@{
+    ViewBag.Title = "YeniYetenek";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid text-center">
+    <!-- Ekranı tam kaplamak ve içeriği ortalamak için container-fluid ve text-center kullanımı -->
+    <br />
+    <br />
+    <h4 style="margin-top: 20px;">Yeni Yetenek Ekleme Sayfası</h4>
+    <br />
+    <form method="post" class="form-control">
+        <br />
+        <br />
+        @Html.Label("Yetenek Açıklaması")
+        @Html.TextBoxFor(x => x.Yetenek, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Yetenek, "", new { @style = "color: red" })
+        <br />
+        @Html.Label("Derece")
+        @Html.TextBoxFor(x => x.Oran, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Oran, "", new { @style = "color: red" })
+        <br />
+        <button class="btn btn-info btn-lg btn-block">Kaydet</button> <!-- btn-lg ve btn-block sınıfları kullanılarak buton büyütüldü ve genişletildi -->
+    </form>
+</div>

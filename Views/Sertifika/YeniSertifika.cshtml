@@ -1,0 +1,33 @@
+﻿@model MvcCV.Models.Entity.TblSertifikalarım
+@{
+    ViewBag.Title = "YeniSertifika";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<div style="margin-top: 50px; margin-left: 670px;">
+    <!-- Yukarıdan aşağıya 50 piksel boşluk ekleyen div -->
+    <h4>Yeni Sertifika Bilgisi Ekleme Sayfası</h4>
+</div>
+<br />
+<br />
+<form class="form-control" method="post">
+    <div style="margin-top: 50px; text-align: center;">
+        <br />
+        <br />
+        @Html.Label("Sertifika Açıklaması")
+        @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Aciklama, "", new { @style = "color: red" })
+        <br />
+        @Html.Label("Tarih")
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Tarih, "", new { @style = "color: red" })
+        <br />
+    </div>
+    <div style="margin-top: 30px; text-align: center;">
+        <button class="btn btn-info btn-block">Kaydet</button>
+        </div>
+</form>
+
+
